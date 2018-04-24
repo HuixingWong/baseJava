@@ -1,5 +1,11 @@
-package interview.Exceptionfinally;
+package interview.Exception;
 
+/**
+ *  https://love2.io/@funkkiid/doc/android_interview//java/basis/finally-return.md
+ *
+ *  关于try catch finally的执行顺序以及返回值顺序
+ *  详解复制上面链接查看
+ */
 public class TheSequenceOfFinally {
 
 
