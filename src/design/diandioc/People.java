@@ -9,6 +9,10 @@ public class People implements Depencies{
         this.abstractDrive = abstractDrive;
     }
 
+    public People(){
+
+    }
+
     public void goOut(){
 
         abstractDrive.start();
