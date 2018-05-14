@@ -4,6 +4,7 @@ import design.diandioc.AbstractDrive;
 import design.diandioc.Car;
 import design.diandioc.People;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -14,7 +15,7 @@ public class Test {
 
 
         try {
-            test8();
+            test10();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -194,4 +195,58 @@ public class Test {
 
 
     }
+
+
+    /**
+     * 反射获取类并调用方法
+     * @throws Exception
+     */
+    static void test9() throws Exception {
+
+        Class<People> peopleClass = People.class;
+
+        Field abstractDrive = peopleClass.getDeclaredField("abstractDrive");
+
+        //如果属性不是public的，通过这种方式设置field是可以被访问的
+        abstractDrive.setAccessible(true);
+
+        People people = peopleClass.newInstance();
+
+        abstractDrive.set(people,new Car());
+
+        Method goOut = peopleClass.getMethod("goOut");
+        goOut.invoke(people);
+
+
+    }
+
+
+    /**
+     * 通过constructor的newinstance
+     * 方法反射获得对象
+     * @throws NoSuchMethodException
+     * @throws IllegalAccessException
+     * @throws InvocationTargetException
+     * @throws InstantiationException
+     */
+
+    static void test10() throws  Exception {
+
+        Class<People> peopleClass = People.class;
+        Constructor<People> constructor = peopleClass.getConstructor(AbstractDrive.class);
+        People people = constructor.newInstance(new Car());
+
+        Method goOut = peopleClass.getDeclaredMethod("goOut");
+        goOut.invoke(people);
+
+    }
+
+    static void test11(){
+
+
+
+    }
+
+
+
 }
