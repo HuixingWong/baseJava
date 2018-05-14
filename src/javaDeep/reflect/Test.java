@@ -4,6 +4,7 @@ import design.diandioc.AbstractDrive;
 import design.diandioc.Car;
 import design.diandioc.People;
 
+import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -15,7 +16,8 @@ public class Test {
 
 
         try {
-            test10();
+            test11();
+            test12();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -241,11 +243,58 @@ public class Test {
 
     }
 
+    /**
+     * the diffrence between Delacred and normal
+     */
+
     static void test11(){
 
+        Class<Son> sonClass = Son.class;
+        Field[] fields = sonClass.getFields();
+        Constructor<?>[] constructors = sonClass.getConstructors();
+
+        System.out.println("this is the \"shorname\" ");
+        for (Field field : fields){
+
+            System.out.println(field);
+
+        }
+
+        for (Constructor constructor: constructors){
+
+            System.out.println(constructor);
+        }
+
+        System.out.println("================================");
 
 
     }
+
+
+    static void test12(){
+
+        Class<Son> sonClass = Son.class;
+        Field[] fields = sonClass.getDeclaredFields();
+        Constructor<?>[] constructors = sonClass.getDeclaredConstructors();
+
+        System.out.println("this is the \"longnane\" ");
+        for (Field field : fields){
+
+            System.out.println(field);
+
+        }
+
+        for (Constructor constructor: constructors){
+
+            System.out.println(constructor);
+        }
+
+        System.out.println("================================");
+
+
+    }
+
+
 
 
 

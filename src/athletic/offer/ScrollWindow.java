@@ -1,6 +1,7 @@
 package athletic.offer;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ScrollWindow {
@@ -29,7 +30,7 @@ public class ScrollWindow {
             return ls;
         }
 
-        List<Integer> list = new ArrayList();
+        LinkedList<Integer> list = new LinkedList<>();
 
         if (arr[0]> arr[1]){
 
@@ -58,8 +59,8 @@ public class ScrollWindow {
 
             if (list.get(0) < arr[i]){
 
-                list.remove(0);
-                list.add(0,arr[i]);
+                list.removeFirst();
+                list.addFirst(arr[i]);
 
             }
 
