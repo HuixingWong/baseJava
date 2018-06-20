@@ -8,7 +8,7 @@ import  java.lang.String;
 public class ReDirection {
 
     public static void main(String[] args){
-        File file = new File("/Users/dogoodsoft-app/Desktop/abc.txt");
+        File file = new File("/Users/dogoodsoft-app/Desktop/doc.txt");
         if(!file.exists()){
             return;
         }else{
