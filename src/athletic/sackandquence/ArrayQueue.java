@@ -22,6 +22,7 @@ public class ArrayQueue {
         }
 
         arrayQueue[index >= arrayQueue.length ? 0 : index++] = value;
+        index = index >= arrayQueue.length ? 0 : index++;
         size++;
 
     }
@@ -70,8 +71,8 @@ public class ArrayQueue {
         arrayQueue.push(6);
         arrayQueue.push(7);
         arrayQueue.push(8);
-        arrayQueue.push(9);
-        arrayQueue.push(10);
+//        arrayQueue.push(9);
+//        arrayQueue.push(10);
 
         while (!arrayQueue.isEmpty()) {
 
