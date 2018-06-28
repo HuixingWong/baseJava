@@ -80,6 +80,19 @@ public class ArrayQueue {
 
         }
 
+
+        arrayQueue.push(69);
+        arrayQueue.push(90);
+        arrayQueue.push(83);
+//        arrayQueue.push(9);
+//        arrayQueue.push(10);
+
+        while (!arrayQueue.isEmpty()) {
+
+            System.out.println(arrayQueue.poll());
+
+        }
+
     }
 
 
