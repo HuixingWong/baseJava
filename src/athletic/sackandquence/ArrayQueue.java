@@ -35,11 +35,7 @@ public class ArrayQueue {
 
         size--;
         int result = arrayQueue[start];
-        if (start >= arrayQueue.length-1){
-            start =0;
-        }else {
-            start++;
-        }
+        start = start >= arrayQueue.length -1 ? 0:start+1;
         return result;
 
 
