@@ -10,6 +10,10 @@ public class FindSmallRotationArr {
             return  -1;
         }
 
+        if (high - low == 1){
+            return arr[high]>arr[low] ? arr[low] : arr[high];
+        }
+
         if (arr[low] <= arr[high]){
 
             return arr[low];
@@ -29,7 +33,7 @@ public class FindSmallRotationArr {
     public static void main(String[] args) {
 
 
-        int[] ints = {3, 4, 5, 6, 7, 1, 2};
+        int[] ints = {3, 4, 5, 6, 7,8,9,10,34,45,67,76,456, 1, 2};
 
         System.out.println(getSmall(ints,0,ints.length-1));
 
