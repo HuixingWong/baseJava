@@ -1,5 +1,11 @@
 package athletic.datastructure;
 
+import athletic.sackandquence.ArrayQueue;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 public class BinaryTreeTes {
 
 
@@ -9,6 +15,9 @@ public class BinaryTreeTes {
         private Node left;
         private Node right;
 
+
+        boolean leaf = false;
+
         public Node(int value) {
             this.value = value;
         }
@@ -17,8 +26,84 @@ public class BinaryTreeTes {
 
     public static boolean isBCT(Node head) {
 
+        if (head != null && head.left == null && head.right != null) {
 
-        return false;
+            return false;
+
+        }
+
+        return true;
+
+    }
+
+
+    //二叉树的广度优先遍历，使用队列
+    public static void widthFirstSerchBinaryTree(Node node) {
+
+
+        if (node == null) {
+
+            System.out.println("emoty");
+            return;
+        }
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(node);
+
+        while (!queue.isEmpty()) {
+
+            Node node1 = queue.poll();
+            System.out.println(node1.value);
+
+            if (node1.left != null) {
+
+                queue.offer(node1.left);
+            }
+            if (node1.right != null) {
+
+                queue.offer(node1.right);
+
+            }
+
+
+        }
+
+        System.out.println();
+
+    }
+
+
+    //二叉树的深度优先遍历，使用栈
+    public static void deptsTraversal(Node root) {
+
+        if (root == null) {
+
+            System.out.println("this is empty tree");
+            return;
+        }
+
+        Stack<Node> queue = new Stack<>();
+        queue.push(root);
+
+        while (!queue.isEmpty()) {
+
+            Node poll = queue.pop();
+            System.out.println(poll.value);
+
+            if (poll.right != null) {
+
+                queue.push(poll.right);
+            }
+
+            if (poll.left != null) {
+
+                queue.push(poll.left);
+            }
+
+
+        }
+
+        System.out.println();
 
     }
 
@@ -115,6 +200,9 @@ public class BinaryTreeTes {
 
         System.out.println(bctc);
 
+        widthFirstSerchBinaryTree(node1);
+
+        deptsTraversal(node1);
 
     }
 
