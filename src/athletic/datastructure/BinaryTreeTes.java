@@ -9,6 +9,9 @@ import java.util.Stack;
 public class BinaryTreeTes {
 
 
+    //判断一棵树是不是完全二叉树的时候，用于判断是否开启单点检测的变量
+    static   boolean  leaf = false;
+
     public static class Node {
 
         private int value;
@@ -16,21 +19,61 @@ public class BinaryTreeTes {
         private Node right;
 
 
-        boolean leaf = false;
-
         public Node(int value) {
             this.value = value;
         }
     }
 
 
-    public static boolean isBCT(Node head) {
+    //判断一棵二叉树是不是完全二叉树
 
-        if (head != null && head.left == null && head.right != null) {
+    public static boolean isBCT(Node root) {
+
+        if (root == null) {
 
             return false;
+        }
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+
+            Node node1 = queue.poll();
+
+            if (node1 != null && node1.left == null && node1.right != null) {
+
+                return false;
+
+            }
+
+            if(leaf){
+
+                if (node1.left != null){
+                    return false;
+                }
+
+            }else {
+
+                if (node1.left != null && node1.right == null){
+                    leaf = true;
+                }
+
+            }
+
+            if (node1.left != null) {
+
+                queue.offer(node1.left);
+            }
+            if (node1.right != null) {
+
+                queue.offer(node1.right);
+
+            }
+
 
         }
+
 
         return true;
 
@@ -194,7 +237,7 @@ public class BinaryTreeTes {
         node5.left = node10;
         node5.right = node11;
 
-        node6.right = node12;
+        node6.left = node12;
 
         int bctc = getBCTC(node1);
 
@@ -203,6 +246,8 @@ public class BinaryTreeTes {
         widthFirstSerchBinaryTree(node1);
 
         deptsTraversal(node1);
+
+        System.out.println(isBCT(node1));
 
     }
 
