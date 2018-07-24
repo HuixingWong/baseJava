@@ -35,8 +35,8 @@ public class JudgeIsOutStack {
 
     public static void main(String[] args) {
 
-        int [] arr1 = {1,2,3,4,5};
-        int [] arr2 = {3,1,4,5,2};
+        int [] arr1 = {1,2,3,3,4,5};
+        int [] arr2 = {3,2,1,3,4,5};
 
         System.out.println(isOutStack(arr1,arr2));
 

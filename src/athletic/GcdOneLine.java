@@ -9,5 +9,11 @@ public class GcdOneLine {
 
     }
 
+    public static void main(String[] args) {
+
+        System.out.println(getGcd(13,39));
+
+    }
+
 
 }

@@ -125,22 +125,22 @@ public class BinaryTreeTes {
             return;
         }
 
-        Stack<Node> queue = new Stack<>();
-        queue.push(root);
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
 
-        while (!queue.isEmpty()) {
+        while (!stack.isEmpty()) {
 
-            Node poll = queue.pop();
+            Node poll = stack.pop();
             System.out.println(poll.value);
 
             if (poll.right != null) {
 
-                queue.push(poll.right);
+                stack.push(poll.right);
             }
 
             if (poll.left != null) {
 
-                queue.push(poll.left);
+                stack.push(poll.left);
             }
 
 
@@ -155,6 +155,7 @@ public class BinaryTreeTes {
     public static int getBCTcount(Node head, int level, int h) {
 
 
+        //当前树右子树的高度
         int hr = 0;
 
         if (head == null) {

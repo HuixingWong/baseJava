@@ -8,27 +8,13 @@ public class test {
     public static void main(String ... args){
 
 
+        String str = "13271531236";
 
-//        String str = "123456789123456789";
-//        String substring = str.substring(0, 16);
-//        System.out.println(substring.length());
+        String substring = str.substring(0, 3);
+        String substring1 = str.substring(7, 11);
 
+        System.out.println(substring+"...."+substring1);
 
-//        String s = "2018.02.05啦啦啦";
-//
-//        String substring1 = s.substring(0, 10);
-//        System.out.println(substring1);
-
-
-        int i = Integer.MAX_VALUE;
-
-       long l = (long) Math.pow(2,31);
-
-        System.out.println(i);
-        System.out.println(l);
-
-        List<String> list = new ArrayList<>();
-        list.forEach(System.out::println);
 
     }
 
