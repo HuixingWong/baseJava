@@ -14,7 +14,6 @@ public class Island {
 
                     infection(arr,i,j);
                     islandCount ++;
-
                 }
 
             }
@@ -29,7 +28,7 @@ public class Island {
 
     private static void infection(int[][] arr, int i, int j) {
 
-        if (i >= arr.length-1 || j >= arr[i].length -1){
+        if (i > arr.length-1 || j > arr[i].length -1){
             return;
         }
 
@@ -55,7 +54,7 @@ public class Island {
 
         int [][] arr = new int[4][5];
         arr[0][0] =1;
-        arr[0][1] =1;
+        arr[0][1] =0;
         arr[0][2] =1;
         arr[0][3] =1;
         arr[0][4] =1;
