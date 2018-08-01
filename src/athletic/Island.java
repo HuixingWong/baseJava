@@ -28,9 +28,6 @@ public class Island {
 
     private static void infection(int[][] arr, int i, int j) {
 
-        if (i > arr.length-1 || j > arr[i].length -1){
-            return;
-        }
 
         arr[i][j] = 2;
         if (i-1 >= 0 && arr[i-1][j] == 1){

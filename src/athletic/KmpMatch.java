@@ -4,7 +4,7 @@ public class KmpMatch {
 
     public static void main(String[] args) {
 
-        int i = getkmpIndex("ababdefgh", "abac");
+        int i = getkmpIndex("ababdefghabcdabcdeabcdef", "11111");
 
         System.out.println(i);
 
@@ -12,6 +12,7 @@ public class KmpMatch {
 
 
     public static int getkmpIndex(String str, String match) {
+
 
 
         if (str == null || match == null || match.length() < 1 || str.length() < match.length()) {
